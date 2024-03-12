@@ -26,6 +26,10 @@
 .button:hover {
   background-color: #ff1493;
 }
+.content {
+  font-family: monospace;
+  text-wrap: wrap;
+}
 .input {
   display: block;
   width: 100%;

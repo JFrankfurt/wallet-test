@@ -14,6 +14,11 @@ FunctionTile.Title = ({ children, ...rest }: PropsWithChildren<TitleProps>) => (
   <h3 {...rest}>{children}</h3>
 );
 
+type ContentProps = React.HTMLAttributes<HTMLHeadingElement>;
+FunctionTile.Content = ({ children, ...rest }: PropsWithChildren<ContentProps>) => (
+  <p className={styles.content} {...rest}>{children}</p>
+);
+
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 FunctionTile.Button = ({
   children,
