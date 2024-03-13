@@ -1,6 +1,6 @@
-"use client";
+'use client'
 
-import FunctionTile from "./functionTile";
+import FunctionTile from './functionTile'
 
 export default function RevokeApproval() {
   return (
@@ -16,5 +16,5 @@ export default function RevokeApproval() {
       </label>
       <FunctionTile.Button>revoke</FunctionTile.Button>
     </FunctionTile>
-  );
+  )
 }

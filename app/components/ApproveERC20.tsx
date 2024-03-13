@@ -1,6 +1,6 @@
-"use client";
+'use client'
 
-import FunctionTile from "./functionTile";
+import FunctionTile from './functionTile'
 
 export default function ApproveERC20() {
   return (
@@ -20,5 +20,5 @@ export default function ApproveERC20() {
       </label>
       <FunctionTile.Button>approve</FunctionTile.Button>
     </FunctionTile>
-  );
+  )
 }

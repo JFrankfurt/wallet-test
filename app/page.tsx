@@ -1,8 +1,7 @@
-import FunctionTile from "./components/functionTile";
-import styles from "./page.module.css";
-import ApproveERC20 from "./components/ApproveERC20";
-import Connect from "./components/Connect";
-import RevokeApproval from "./components/RevokeApproval";
+import styles from './page.module.css'
+import ApproveERC20 from './components/ApproveERC20'
+import Connect from './components/Connect'
+import RevokeApproval from './components/RevokeApproval'
 
 export default function Home() {
   return (
@@ -17,5 +16,5 @@ export default function Home() {
         <RevokeApproval />
       </div>
     </main>
-  );
+  )
 }
