@@ -2,6 +2,8 @@ import styles from './page.module.css'
 import ApproveERC20 from './components/ApproveERC20'
 import Connect from './components/Connect'
 import RevokeApproval from './components/RevokeApproval'
+import SignTypedData from './components/SignTypedData'
+import SignMessage from './components/SignMessage'
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
         <Connect />
         <ApproveERC20 />
         <RevokeApproval />
+        <SignTypedData />
+        <SignMessage />
       </div>
     </main>
   )
