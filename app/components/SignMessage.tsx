@@ -9,7 +9,7 @@ const exampleMessage = {
   message: 'Send $PEPE to jfrankfurt.eth',
 }
 export default function SignTypedData() {
-  const { signMessage, status } = useSignMessage()
+  const { signMessage, status, error } = useSignMessage()
   const [sig, setSig] = useState('')
   const sign = () => {
     signMessage(exampleMessage, { onSuccess: (data) => setSig(data) })
@@ -18,6 +18,7 @@ export default function SignTypedData() {
     <FunctionTile>
       <FunctionTile.Title>Sign Typed Data</FunctionTile.Title>
       <div>{status}</div>
+      {error && <div>{error.message}</div>}
       {sig && <div className={styles.code}>signature: {sig}</div>}
       <div className={styles.code}>
         {JSON.stringify(exampleMessage, null, 2)}

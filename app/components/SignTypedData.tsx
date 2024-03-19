@@ -34,7 +34,7 @@ const exampleTypedData = {
   },
 }
 export default function SignTypedData() {
-  const { signTypedData, status } = useSignTypedData()
+  const { signTypedData, status, error, failureReason } = useSignTypedData()
   const sign = () => {
     // @ts-expect-error
     signTypedData(exampleTypedData)
@@ -47,6 +47,7 @@ export default function SignTypedData() {
     <FunctionTile>
       <FunctionTile.Title>Sign Typed Data</FunctionTile.Title>
       <div>status: {status}</div>
+      {error && <div>error: {error.name} {error.message}</div>}
       <div className={styles.code}>
         {JSON.stringify(exampleTypedData, null, 2)}
       </div>
