@@ -4,6 +4,7 @@ import Connect from './components/Connect'
 import RevokeApproval from './components/RevokeApproval'
 import SignTypedData from './components/SignTypedData'
 import SignMessage from './components/SignMessage'
+import SwitchChains from './components/SwitchChains'
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <RevokeApproval />
         <SignTypedData />
         <SignMessage />
+        <SwitchChains />
       </div>
     </main>
   )
