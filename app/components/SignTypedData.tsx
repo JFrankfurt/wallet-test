@@ -22,15 +22,15 @@ const exampleTypedData = {
       { name: 'salt', type: 'bytes32' },
     ],
     MyPrimaryType: [
-      // Custom type definition as per your application
       { name: 'data', type: 'string' },
       { name: 'amount', type: 'uint256' },
+      { name: 'address', type: 'string' },
     ],
-    // Additional custom types as required
   },
   message: {
     data: 'Some data',
     amount: 1000,
+    address: '0x48c89d77ae34ae475e4523b25ab01e363dce5a78'
   },
 }
 export default function SignTypedData() {

@@ -16,7 +16,7 @@ export default function SignTypedData() {
   }
   return (
     <FunctionTile>
-      <FunctionTile.Title>Sign Typed Data</FunctionTile.Title>
+      <FunctionTile.Title>Sign Message</FunctionTile.Title>
       <div>{status}</div>
       {error && <div>{error.message}</div>}
       {sig && <div className={styles.code}>signature: {sig}</div>}
