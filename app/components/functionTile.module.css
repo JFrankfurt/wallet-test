@@ -53,4 +53,6 @@
 
 .code {
   font-family: monospace;
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
