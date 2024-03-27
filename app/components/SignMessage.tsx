@@ -32,7 +32,7 @@ const safeMessage = {
   message: 'Send $PEPE to jfrankfurt.eth',
 }
 const hexMessage = {
-  message: '0x30786361666530303030636166653030303063616665303030306361666530303030',
+  message: { raw: '0x30786361666530303030636166653030303063616665303030306361666530303030' as `0x${string}` },
 }
 const invisMessag = {
   message: safeMessage.message + getAllInvisibleCharsString(),
