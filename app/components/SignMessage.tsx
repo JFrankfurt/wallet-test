@@ -31,6 +31,9 @@ const getAllInvisibleCharsString = () => {
 const safeMessage = {
   message: 'Send $PEPE to jfrankfurt.eth',
 }
+const hexMessage = {
+  message: '0x30786361666530303030636166653030303063616665303030306361666530303030',
+}
 const invisMessag = {
   message: safeMessage.message + getAllInvisibleCharsString(),
 }
@@ -39,14 +42,15 @@ const invisMessag = {
 export default function SignTypedData() {
   const { signMessage, status, error } = useSignMessage()
   const [sig, setSig] = useState('')
-  const sign = () => {
+  const sign = () => 
     signMessage(safeMessage, { onSuccess: (data) => setSig(data) })
-  }
-  const signInvis = () => {
-    signMessage({
-      message: safeMessage.message + getAllInvisibleCharsString()
-    }, { onSuccess: (data) => setSig(data) })
-  }
+  
+  const signInvis = () => 
+    signMessage(invisMessag, { onSuccess: (data) => setSig(data) })
+  
+  const signHexData = () => 
+    signMessage(hexMessage, { onSuccess: (data) => setSig(data) })
+  
   return (
     <FunctionTile>
       <FunctionTile.Title>Sign Message</FunctionTile.Title>
@@ -57,11 +61,16 @@ export default function SignTypedData() {
       <div className={styles.code}>
         {JSON.stringify(safeMessage, null, 2)}
       </div>
+      <b>hex</b>
+      <div className={styles.code}>
+        {JSON.stringify(hexMessage, null, 2)}
+      </div>
       <b>invis</b>
       <div className={styles.code}>
         {JSON.stringify(invisMessag, null, 2)}
       </div>
       <FunctionTile.Button onClick={sign}>sign</FunctionTile.Button>
+      <FunctionTile.Button onClick={signHexData}>sign hex version</FunctionTile.Button>
       <FunctionTile.Button onClick={signInvis}>sign w/ invisible characters</FunctionTile.Button>
     </FunctionTile>
   )
