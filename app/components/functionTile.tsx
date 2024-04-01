@@ -23,9 +23,9 @@ FunctionTile.Content = ({
   children,
   ...rest
 }: PropsWithChildren<ContentProps>) => (
-  <p className={styles.content} {...rest}>
+  <div className={styles.content} {...rest}>
     {children}
-  </p>
+  </div>
 )
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>

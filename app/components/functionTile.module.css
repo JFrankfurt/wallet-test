@@ -29,6 +29,8 @@
 .content {
   font-family: monospace;
   text-wrap: wrap;
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
 .input {
   display: block;
@@ -36,7 +38,7 @@
   padding: 10px 15px;
   font-size: 16px;
   line-height: 1.5;
-  color: var(--foreground-rgb);
+  color: black;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
