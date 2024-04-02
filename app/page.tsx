@@ -1,7 +1,6 @@
 import styles from './page.module.css'
 import ApproveERC20 from './components/ApproveERC20'
 import Connect from './components/Connect'
-import RevokeApproval from './components/RevokeApproval'
 import SignTypedData from './components/SignTypedData'
 import SignMessage from './components/SignMessage'
 import SwitchChains from './components/SwitchChains'
@@ -17,7 +16,6 @@ export default function Home() {
       <div className={styles.grid}>
         <Connect />
         <ApproveERC20 />
-        <RevokeApproval />
         <SignTypedData />
         <SignMessage />
         <SignMessageArbitrary />
