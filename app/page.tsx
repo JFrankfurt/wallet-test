@@ -5,6 +5,7 @@ import RevokeApproval from './components/RevokeApproval'
 import SignTypedData from './components/SignTypedData'
 import SignMessage from './components/SignMessage'
 import SwitchChains from './components/SwitchChains'
+import SignMessageArbitrary from './components/SignMessageArbitrary'
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <RevokeApproval />
         <SignTypedData />
         <SignMessage />
+        <SignMessageArbitrary />
         <SwitchChains />
       </div>
     </main>
