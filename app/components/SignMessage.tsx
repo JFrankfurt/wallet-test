@@ -1,9 +1,10 @@
 'use client'
 
-import { useSignMessage } from 'wagmi'
+import { useAccount, useSignMessage, useVerifyMessage } from 'wagmi'
 import FunctionTile from './functionTile'
 import styles from './functionTile.module.css'
 import { useState } from 'react'
+import { SignableMessage } from 'viem'
 
 const getAllInvisibleCharsString = () => {
   const chars = [];
@@ -41,15 +42,30 @@ const invisMessag = {
 
 export default function SignTypedData() {
   const { signMessage, status, error } = useSignMessage()
-  const [sig, setSig] = useState('')
-  const sign = () => 
+  const [sig, setSig] = useState<`0x${string}` | undefined>(undefined)
+  const [signedMessage, setSignedMessage] = useState<SignableMessage>(safeMessage.message)
+  const sign = () => {
     signMessage(safeMessage, { onSuccess: (data) => setSig(data) })
+    setSignedMessage(safeMessage.message)
+  }
   
-  const signInvis = () => 
+  const signInvis = () => {
     signMessage(invisMessag, { onSuccess: (data) => setSig(data) })
+    setSignedMessage(invisMessag.message)
+  }
   
-  const signHexData = () => 
+  const signHexData = () => {
     signMessage(hexMessage, { onSuccess: (data) => setSig(data) })
+    setSignedMessage(hexMessage.message)
+  }
+  
+  const { address } = useAccount()
+  const {status: verificationStatus, error: verificationError} = useVerifyMessage({
+    address,
+    message: signedMessage,
+    signature: sig,
+  })
+
   
   return (
     <FunctionTile>
@@ -57,6 +73,8 @@ export default function SignTypedData() {
       <div>{status}</div>
       {error && <div>{error.message}</div>}
       {sig && <div className={styles.code}>signature: {sig}</div>}
+      {verificationStatus && <div className={styles.code}>verificationStatus: {verificationStatus}</div>}
+      {verificationError && <div className={styles.code}>verificationError: {verificationError.message}</div>}
       <b>normal</b>
       <div className={styles.code}>
         {JSON.stringify(safeMessage, null, 2)}
